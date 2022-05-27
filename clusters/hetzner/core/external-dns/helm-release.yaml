@@ -1,0 +1,40 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: external-dns
+  namespace: kube-system
+spec:
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  chart:
+    spec:
+      chart: external-dns
+      version: 6.4.4
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami-charts
+        namespace: flux-system
+      interval: 5m
+  
+  values:
+    domainFilters: 
+      domainFiltersSecretRef:
+        name: r53-dns-zones
+        key: dns-zones
+    policy: sync
+    txtPrefix: "k8s."
+    aws:
+      credentials:
+        accessKeySecretRef:
+          name: r53-access-key 
+          key: access-key-id
+        secretKeySecretRef:
+          name: r53-secret-key
+          key: secret-access-key
+
