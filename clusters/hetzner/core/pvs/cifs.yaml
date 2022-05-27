@@ -1,0 +1,12 @@
+---
+apiVersion: ricoberger.de/v1alpha1
+kind: VaultSecret
+metadata:
+  name: cifs
+  namespace: utility
+spec:
+  keys:
+    - username
+    - password
+  path: secrets/kube-system/cifs
+  type: juliohm/cifs
