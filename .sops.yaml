@@ -1,6 +1,6 @@
 ---
 creation_rules:
-  - path_regex: clusters/.*\.ya?ml
+  - path_regex: clusters/hetzner/.*\.ya?ml
     encrypted_regex: "^(data|stringData)$"
     age: >-
       age18s03lpurvy4ce2qjfc0u7yk4lfxw4n5h0hz9gpyp99zjdq5j84cs00rksh,
