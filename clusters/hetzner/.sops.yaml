@@ -1,0 +1,8 @@
+---
+creation_rules:
+  - path_regex: clusters/hetzner/.*\.sops\.ya?ml
+    encrypted_regex: "^(data|stringData)$"
+    age: >-
+      age18s03lpurvy4ce2qjfc0u7yk4lfxw4n5h0hz9gpyp99zjdq5j84cs00rksh,
+      age1zcejns4way9kxdla9u63g74uc6tuwqu9y962kzw8y4rxg4x5nfaqqk9u6w
+      age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
