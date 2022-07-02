@@ -24,7 +24,7 @@ spec:
   values:
     configInline:
       address-pools:
-        - name: default
+        - name: primary
           protocol: layer2
           addresses:
-            - "${METALLB_LB_RANGE}"
+            - 159.69.212.175
